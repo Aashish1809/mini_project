@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/nlpPrimaryColor">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/toolbar_top_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <EditText
+        android:id="@+id/url_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_nlp_edittext"
+        android:lineSpacingMultiplier="1.5"
+        android:padding="16dp"
+        android:layout_below="@id/toolbar"
+        android:hint="Enter the Text..."
+        android:singleLine="false"
+        android:textAppearance="@style/TextAppearanceNLPEditText"
+        android:textColor="@android:color/white"
+        android:textColorHint="#80FFFFFF" />
+
+    <Button
+        android:id="@+id/imdb_submit_button"
+        android:layout_below="@id/url_edit_text"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_text_classification_clear_button"
+        android:text="@string/summarize"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/imdb_clear_button"
+        style="@style/Button"
+        android:layout_below="@id/imdb_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_text_classification_clear_button"
+        android:text="@string/clear"
+        android:textColor="@android:color/white" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_below="@id/imdb_clear_button"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_text_classification_clear_button"
+            android:hint="Summarized Text..."
+            android:lineSpacingMultiplier="1.5"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:padding="16dp"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="@style/TextAppearanceNLPEditText"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@id/imdb_submit_button"
+            android:textColorHint="#80FFFFFF"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </ScrollView>
+
+
+</RelativeLayout>
